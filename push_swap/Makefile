@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/24 22:22:02 by halaoui           #+#    #+#              #
+#    Updated: 2023/11/28 02:50:37 by halaoui          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		=	push_swap
 
 CC 			=	cc
@@ -18,6 +30,8 @@ SRC_M		=	SRC/push_swap.c\
 				libftx/ft_lstnew.c\
 				libftx/ft_lstlast.c\
 				libftx/ft_lstadd_back.c\
+				libftx/ft_printf.c\
+				libftx/ft_hexa.c\
 
 OBJS		=	$(SRC_M:.c=.o)
 
