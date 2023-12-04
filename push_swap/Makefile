@@ -14,12 +14,20 @@ NAME		=	push_swap
 
 CC 			=	cc
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra 
 
 SRC_M		=	SRC/push_swap.c\
 				SRC/ft_parsing.c\
 				SRC/ft_free_stack.c\
 				SRC/print_stack.c\
+				SRC/is_sorted.c\
+				SRC/sort_1.c\
+				SRC/stack_size.c\
+				SRC/swap.c\
+				SRC/rotate.c\
+				SRC/reverse_rotate.c\
+				SRC/push.c\
+				SRC/utils0.c\
 				libftx/ft_putnbr.c\
 				libftx/ft_atoi.c\
 				libftx/ft_putstr.c\
@@ -32,6 +40,11 @@ SRC_M		=	SRC/push_swap.c\
 				libftx/ft_lstadd_back.c\
 				libftx/ft_printf.c\
 				libftx/ft_hexa.c\
+				libftx/ft_split.c\
+				libftx/ft_strdup.c\
+				libftx/ft_strjoin.c\
+				libftx/ft_substr.c\
+				libftx/ft_strcmp.c\
 
 OBJS		=	$(SRC_M:.c=.o)
 

@@ -19,7 +19,7 @@ t_stack *ft_lstnew(int content)
     new = malloc(sizeof(t_stack));
     if (!new)
         return (NULL);
-    new->content = content;
+    new->value = content;
     new->next = NULL;
     return (new);
 }

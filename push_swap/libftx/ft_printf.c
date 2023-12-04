@@ -53,8 +53,7 @@ void	ft_putnbrcount(int n, int *count)
 		ft_putcharcount(n + '0', count);
 }
 
-
-void	ft_putunsigned(unsigned int n, int *count)
+void	ft_putunsigned(int n, int *count)
 {
 	int	d;
 	int	m;

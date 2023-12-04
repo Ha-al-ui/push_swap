@@ -12,32 +12,98 @@
 
 #include "push_swap.h"
 
-int parsing_args(char **argv, t_stack **a)
+int	is_sign(char c)
+{
+	return (c == '+' || c == '-');
+}
+
+static int	arg_is_number(char **av)
+{
+	int	i;
+    int j;
+
+	i = 0;
+	while (av[i])
+    {
+        j = 0;
+        while (av[i][j])
+        {
+            if (!ft_isdigit(av[i][j]) && !is_sign(av[i][j]))
+                return (0);
+            j++;
+        }
+		i++;
+    }  
+	return (1);
+}
+
+int ft_sign(char **tab)
 {
     int i;
     int j;
-    int num;
-    int sign;
 
+    i = 0;
+    while (tab[i])
+    {
+        j = 0;
+        while (ft_isdigit(tab[i][j]))
+        {
+            if (tab[i][j + 1] == '-' || tab[i][j + 1] == '+')
+                return (0);
+            j++;
+        }
+        j = 0;
+        while (tab[i][j] == '-' || tab[i][j] == '+')
+        {
+            if (!ft_isdigit(tab[i][j + 1]))
+                return (0);
+            j++;
+        }
+        i++;
+    }
+    return (1);
+}
+
+int have_duplicates(char **av)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (av[i])
+    {
+        j = i + 1;  
+        while (av[j])
+        {
+            if(ft_atoi(av[i]) == ft_atoi(av[j]))
+                return(0);
+            j++;
+        }
+        i++;
+    }
+    return 1;
+}
+
+char ** parsing_args(char **argv)
+{
+    int i;
+    char *str;
+    char **tab;
+
+    str = ft_strdup("");
     i = 1;
     while (argv[i])
     {
-        j = 0;
-        sign = 1;
-        if (argv[i][j] == '-')
-        {
-            sign = -1;
-            j++;
-        }
-        while (argv[i][j])
-        {
-            if (!ft_isdigit(argv[i][j]))
-                ft_error("Error\nOnly numbers\n");
-            j++;
-        }
-        num = ft_atoi(argv[i]) * sign;
-        ft_lstadd_back(a, ft_lstnew(num));
+        str = ft_strjoin(str, argv[i]);
+        str = ft_strjoin(str, " ");
         i++;
     }
-    return (0);
+    tab = ft_split(str, ' ');
+    if (!arg_is_number(tab))
+        ft_error("Error\nOnly numbers are allowed\n");
+    else if (!ft_sign(tab))
+        ft_error("Error\nProblem in signs\n");
+    else if (!have_duplicates(tab))
+        ft_error("Error\nTheir is numbers duplicates\n");
+    return (tab);
 }

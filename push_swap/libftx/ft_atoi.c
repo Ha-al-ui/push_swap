@@ -18,6 +18,24 @@ static int	white_spaces(const char *s, size_t i)
 			|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'));
 }
 
+static int result(const char *str, int i, int s, unsigned long res)
+{
+	if(!str)
+		ft_error("Error\n");
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+		if (res > 9223372036854775807ull && s == 1)
+			return (-1);
+		if (res > 9223372036854775807ull)
+			return (0);
+		if ((long)res > MAX_INT || (long)res < MIN_INT)
+			ft_error("Error\nNumber is too big\n");
+	}
+	return (res * s);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
@@ -43,6 +61,9 @@ int	ft_atoi(const char *str)
 			return (-1);
 		if (res > 9223372036854775807ull)
 			return (0);
+		if ((long)res > MAX_INT || (long)res < MIN_INT)
+			ft_error("Error\nNumber is too big\n");
 	}
-	return (res * s);
+	res = result(str, i, s, res);
+	return (res);
 }
