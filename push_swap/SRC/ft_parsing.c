@@ -12,9 +12,26 @@
 
 #include "push_swap.h"
 
-int	is_sign(char c)
+void check_argv_null(char **argv) 
 {
-	return (c == '+' || c == '-');
+    int i;
+    int j;
+
+    i = 1;
+    while (argv[i])
+    {
+        if (argv[i][0] == '\0')
+            ft_error("Error\n");
+        ft_atoi(argv[i]);
+        j = 0;
+        while (argv[i][j])
+        {
+            if (argv[i][j] == ' ')
+                ft_error("Error\n");
+            j++;
+        }
+        i++;
+    }
 }
 
 static int	arg_is_number(char **av)
@@ -33,7 +50,7 @@ static int	arg_is_number(char **av)
             j++;
         }
 		i++;
-    }  
+    }
 	return (1);
 }
 
@@ -46,6 +63,12 @@ int ft_sign(char **tab)
     while (tab[i])
     {
         j = 0;
+        while (tab[i][j] == '-' || tab[i][j] == '+')
+        {
+            if (!ft_isdigit(tab[i][j + 1]))
+                return (0);
+            j++;
+        }
         while (ft_isdigit(tab[i][j]))
         {
             if (tab[i][j + 1] == '-' || tab[i][j + 1] == '+')
@@ -53,12 +76,6 @@ int ft_sign(char **tab)
             j++;
         }
         j = 0;
-        while (tab[i][j] == '-' || tab[i][j] == '+')
-        {
-            if (!ft_isdigit(tab[i][j + 1]))
-                return (0);
-            j++;
-        }
         i++;
     }
     return (1);
@@ -90,6 +107,7 @@ char ** parsing_args(char **argv)
     char *str;
     char **tab;
 
+    check_argv_null(argv);
     str = ft_strdup("");
     i = 1;
     while (argv[i])
@@ -100,10 +118,10 @@ char ** parsing_args(char **argv)
     }
     tab = ft_split(str, ' ');
     if (!arg_is_number(tab))
-        ft_error("Error\nOnly numbers are allowed\n");
+        ft_error("Error\n");
     else if (!ft_sign(tab))
-        ft_error("Error\nProblem in signs\n");
+        ft_error("Error\n");
     else if (!have_duplicates(tab))
-        ft_error("Error\nTheir is numbers duplicates\n");
+        ft_error("Error\n");
     return (tab);
 }

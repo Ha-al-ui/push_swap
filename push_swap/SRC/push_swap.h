@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdarg.h>
+# include <ctype.h>
 
 # define MAX_INT	2147483647
 # define MIN_INT	-2147483648
@@ -65,6 +66,7 @@ void	push_b(t_stack **a, t_stack **b);
 int     find_min(t_stack *stack);
 int     last_value(t_stack *stack);
 void    sorting4(t_stack **a, t_stack **b, int size, int min);
+int	    is_sign(char c);
 
 
 #endif

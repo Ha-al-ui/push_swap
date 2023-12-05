@@ -29,6 +29,20 @@ void ff(void)
 {
     system("leaks push_swap");
 }
+
+void ft_free(char **tab)
+{
+    int i;
+
+    i = 0;
+    while (tab[i])
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
+}
+
 int main(int argc, char **argv)
 {
     // atexit(ff);
@@ -36,13 +50,14 @@ int main(int argc, char **argv)
     t_stack *b;
     char **s;
     int size_a;
-    
+
     a = NULL;
     b = NULL;
     if (argc > 1)
     {
         s = parsing_args(argv);
         storing_a(s, &a);
+        ft_free(s);
         size_a = stack_size(a);
         if (!is_sorted(a, size_a))
         {
@@ -51,12 +66,8 @@ int main(int argc, char **argv)
             // ft_print_stack(a);
             ft_free_stack(b);
         }
-        else
-            ft_putstr("Already sorted\n");
         ft_free_stack(a);
+        exit (0);
     }
-    else
-        ft_error("Error\nWrong number of arguments\n");
-    
 }
 

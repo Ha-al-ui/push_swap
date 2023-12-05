@@ -1,10 +1,15 @@
 #include "push_swap.h"
 
+int	is_sign(char c)
+{
+	return (c == '+' || c == '-');
+}
+
 int find_min(t_stack *stack)
 {
     int min;
     
-    min = MAX_INT;  // Assume all values are greater than INT_MAX initially
+    min = MAX_INT;
     while (stack)
     {
         if (stack->value < min)

@@ -31,7 +31,7 @@ static int result(const char *str, int i, int s, unsigned long res)
 		if (res > 9223372036854775807ull)
 			return (0);
 		if ((long)res > MAX_INT || (long)res < MIN_INT)
-			ft_error("Error\nNumber is too big\n");
+			ft_error("Error\n");
 	}
 	return (res * s);
 }
@@ -62,7 +62,7 @@ int	ft_atoi(const char *str)
 		if (res > 9223372036854775807ull)
 			return (0);
 		if ((long)res > MAX_INT || (long)res < MIN_INT)
-			ft_error("Error\nNumber is too big\n");
+			ft_error("Error\n");
 	}
 	res = result(str, i, s, res);
 	return (res);
