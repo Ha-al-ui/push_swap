@@ -24,3 +24,10 @@ void swap_b(t_stack **b)
     }
     write(1, "sb\n", 3);
 }
+
+void swap_ab(t_stack **a, t_stack **b)
+{
+    swap_a(a);
+    swap_b(b);
+    write(1, "ss\n", 3);
+}

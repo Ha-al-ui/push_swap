@@ -16,8 +16,8 @@ void ft_print_stack(t_stack *stack)
 {
     while (stack)
     {
-        ft_printf("%d", stack->value);
-        stack = stack->next;
+        ft_printf("%d, index : %d ", stack->value, stack->index);
+            stack = stack->next;
         ft_printf("\n");
     }
 }

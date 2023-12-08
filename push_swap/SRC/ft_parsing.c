@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+int check_str(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (ft_isdigit(str[i]))
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
 void check_argv_null(char **argv) 
 {
     int i;
@@ -26,7 +40,7 @@ void check_argv_null(char **argv)
         j = 0;
         while (argv[i][j])
         {
-            if (argv[i][j] == ' ')
+            if (check_str(argv[i]) == 0)
                 ft_error("Error\n");
             j++;
         }
