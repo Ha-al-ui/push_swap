@@ -63,8 +63,8 @@ int main(int argc, char **argv)
         {
             if (size_a <= 5)
                 sort_1(&a, &b, size_a);
-            else
-                sort_2(&a, &b, size_a);
+            // else
+            //     sort_2(&a, &b, size_a);
             ft_print_stack(a);
             ft_free_stack(b);
         }

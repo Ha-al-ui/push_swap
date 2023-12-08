@@ -68,10 +68,8 @@ int     find_min(t_stack *stack);
 int     last_value(t_stack *stack);
 void    sorting4(t_stack **a, t_stack **b, int size, int min);
 int	    is_sign(char c);
-void index_all(t_stack **stack);
-void    sort_2(t_stack **a, t_stack **b, int size);
+void    index_all(t_stack **stack);
 int     find_max(t_stack *stack);
-int     move_to_b(t_stack **a, t_stack **b, int limit);
 
 
 #endif

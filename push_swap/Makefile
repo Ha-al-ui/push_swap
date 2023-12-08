@@ -29,8 +29,6 @@ SRC_M		=	SRC/push_swap.c\
 				SRC/push.c\
 				SRC/utils0.c\
 				SRC/index.c\
-				SRC/sort_2.c\
-				SRC/chunk_sort.c\
 				libftx/ft_putnbr.c\
 				libftx/ft_atoi.c\
 				libftx/ft_putstr.c\
