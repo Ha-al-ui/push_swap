@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/09 01:22:29 by halaoui           #+#    #+#             */
+/*   Updated: 2023/12/09 01:22:29 by halaoui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../SRC/push_swap.h"
 
 static int	car_coun(char const *s, char c)
@@ -46,7 +58,7 @@ static char	**split_m(const char *s, char c)
 			len = 0;
 			while (*s && *s != c && ++len)
 				s++;
-			p[i++] = ft_substr((char*)s - len, 0, len);
+			p[i++] = ft_substr((char *) s - len, 0, len);
 			if (!p)
 				ft_free(p);
 		}

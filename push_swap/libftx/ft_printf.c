@@ -6,7 +6,7 @@
 /*   By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 02:44:27 by halaoui           #+#    #+#             */
-/*   Updated: 2023/11/28 02:53:30 by halaoui          ###   ########.fr       */
+/*   Updated: 2023/12/09 01:29:16 by halaoui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstrcount(char *s, int *count)
 
 	i = 0;
 	if (!s)
-	s = "(null)";
+		s = NULL;
 	while (s[i])
 	{
 		ft_putcharcount(s[i++], count);

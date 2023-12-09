@@ -6,7 +6,7 @@
 /*   By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 22:21:58 by halaoui           #+#    #+#             */
-/*   Updated: 2023/11/28 02:52:34 by halaoui          ###   ########.fr       */
+/*   Updated: 2023/12/09 01:44:05 by halaoui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,14 @@ char	*ft_strdup(char *s1);
 char    *ft_strjoin(char *s1, char *s2);
 int     ft_strlen(char *str);
 int     have_duplicates(char **av);
-int		ft_strcmp(char *s1, char *s2);
 int     is_sorted(t_stack *stack, int size);
 int     stack_size(t_stack *stack);
 void    sort2_3(t_stack **a, int size);
 void    swap_a(t_stack **a);
 void    rotate_a(t_stack **a);
+void rotate_b(t_stack **b); 
 void    reverse_rotate_a(t_stack **a);
+void    reverse_rotate_b(t_stack **b);
 void	push_a(t_stack **a, t_stack **b);
 void    sort_1(t_stack **a, t_stack **b, int size);
 void    swap_b(t_stack **b);
@@ -70,6 +71,12 @@ void    sorting4(t_stack **a, t_stack **b, int size, int min);
 int	    is_sign(char c);
 void    index_all(t_stack **stack);
 int     find_max(t_stack *stack);
+int     change_psize(t_stack **a);
+int     get_positon(t_stack *stack, int index);
+int     calculate_instructions(t_stack *stack, int index);
+void    sort_2(t_stack **a, t_stack **b);
+void    sort_inf(t_stack **a, t_stack **b);
+int	    check_str(char *str);
 
 
 #endif

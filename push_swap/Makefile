@@ -6,7 +6,7 @@
 #    By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/24 22:22:02 by halaoui           #+#    #+#              #
-#    Updated: 2023/11/28 02:50:37 by halaoui          ###   ########.fr        #
+#    Updated: 2023/12/09 01:27:13 by halaoui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRC_M		=	SRC/push_swap.c\
 				SRC/push.c\
 				SRC/utils0.c\
 				SRC/index.c\
+				SRC/sort_2.c\
+				SRC/calculation.c\
 				libftx/ft_putnbr.c\
 				libftx/ft_atoi.c\
 				libftx/ft_putstr.c\
@@ -45,7 +47,6 @@ SRC_M		=	SRC/push_swap.c\
 				libftx/ft_strdup.c\
 				libftx/ft_strjoin.c\
 				libftx/ft_substr.c\
-				libftx/ft_strcmp.c\
 
 OBJS		=	$(SRC_M:.c=.o)
 

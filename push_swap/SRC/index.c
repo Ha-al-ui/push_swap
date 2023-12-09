@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   index.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/09 01:47:45 by halaoui           #+#    #+#             */
+/*   Updated: 2023/12/09 01:47:45 by halaoui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int index_size(t_stack *head)
@@ -12,7 +24,20 @@ int index_size(t_stack *head)
 
     return size;
 }
+void reset_index(t_stack **stack)
+{
+    t_stack *tmp;
+    int i;
 
+    i = -1;
+    tmp = *stack;
+    while(tmp)
+    {
+        tmp->index = i;
+        tmp = tmp->next;
+    }
+    stack = &tmp;
+}
 void index_all(t_stack **stack)
 {
     t_stack *tmp;
@@ -21,6 +46,7 @@ void index_all(t_stack **stack)
     int i;
 
     i = 0;
+    reset_index(stack);
     min = find_min(*stack);
     size = stack_size(*stack);
     tmp = *stack;

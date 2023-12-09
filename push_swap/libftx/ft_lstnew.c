@@ -12,15 +12,15 @@
 
 #include "../SRC/push_swap.h"
 
-t_stack *ft_lstnew(int content)
+t_stack	*ft_lstnew(int content)
 {
-    t_stack *new;
+	t_stack	*new;
 
-    new = malloc(sizeof(t_stack));
-    if (!new)
-        return (NULL);
-    new->value = content;
-    new->index = -1;
-    new->next = NULL;
-    return (new);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->value = content;
+	new->index = -1;
+	new->next = NULL;
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: halaoui <halaoui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 01:20:13 by halaoui           #+#    #+#             */
-/*   Updated: 2023/11/28 01:20:25 by halaoui          ###   ########.fr       */
+/*   Updated: 2023/12/09 01:04:41 by halaoui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static int	white_spaces(const char *s, size_t i)
 			|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'));
 }
 
-static int result(const char *str, int i, int s, unsigned long res)
+static int	result(const char *str, int i, int s, unsigned long res)
 {
-	if(!str)
+	if (!str)
 		ft_error("Error\n");
 	while (str[i] >= '0' && str[i] <= '9')
 	{
@@ -57,12 +57,7 @@ int	ft_atoi(const char *str)
 	{
 		res = (res * 10) + (str[i] - '0');
 		i++;
-		if (res > 9223372036854775807ull && s == 1)
-			return (-1);
-		if (res > 9223372036854775807ull)
-			return (0);
-		if ((long)res > MAX_INT || (long)res < MIN_INT)
-			ft_error("Error\n");
+		result(str, i, s, res);
 	}
 	res = result(str, i, s, res);
 	return (res);
